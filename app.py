@@ -14,7 +14,7 @@ extraction_donnee =pd.read_csv('donnees_securite_sociale.csv')
 #Eliminer les doublons
 extraction_donnee.drop_duplicates(inplace=True)
 #Eliminer les valeurs manquantes
-#extraction_donnee.fillna(method="ffill",inplace=True)
+extraction_donnee.fillna(method="ffill",inplace=True)
 
 #Standartisation de l'heure et date
 extraction_donnee['date_payment']=pd.to_datetime(extraction_donnee['date_payment'],errors='coerce')
@@ -39,4 +39,5 @@ plt.title("Évolution du coût des prestations de sécurité sociale")
 plt.xlabel("Date")
 plt.ylabel("Cout")
 plt.show()
+
 
